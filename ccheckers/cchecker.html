@@ -1,0 +1,56 @@
+<html>
+<head>
+<meta name="Author" content="Simon Yau"/>
+<meta name="description" content="Chinese Checker Solitaire. Powered by Raphael." />
+<title>Chinese Checker Solitaire Game Thingie (GPL)</title>
+<script src="raphael.js"></script>
+<script src="cchecker.js"></script>
+<script src="tabs.js"></script>
+<link rel="stylesheet" href="tabs.css">
+</head>
+<body style="background-color: #aa8888">
+
+<div id="container" style="width: 500px; margin-left: auto; margin-right: auto;">
+
+<ul id="tabs">
+  <li><a href="#main">Play!</a></li>
+  <li><a href="#about">About</a></li>
+  <li id='easteregg' style="display: none;"><a href="#record">Move history</a></li>
+</ul>
+
+<div id='main'></div>
+
+<div id='about'>
+  <h3>Background</h3>
+  I wrote this game as a port of the Chinese Checker Solitaire game my fiancee plays in real life. There was a lack of football on TV one Saturday afternoon, so I wrote this while she flipped through bridal gown magazines. <br><br>
+
+  The game is written in javascript, powered by the <a href="http://raphaeljs.com">Raphael</a> SVG library. <br><br>
+
+  The tabular layout is stolen from <a href="http://www.elated.com/articles/javascript-tabs/">an elated article</a>. 
+
+  <h3>Rules:</h3>
+  Click on a marble to pick it up. Click on a slot to put it down. However, the marble may only be put down if it jumps over exactly one other marble and no empty slots in between. Jumping one marble over another removes the marble you jumped over from board. Your objective: end up with as few marbles as possible.<br><br>
+
+  (According to <a href="http://www.drsref.com.au/go/play/solitaire/solitaire.html">this</a> there is always a one-marble solution, but that board has a different layout, so the proof may not be applicable to this one.)<br><br>
+
+  <h3>License:</h3>
+  The code is released under <a href="LICENSE.txt">GPL</a>.<br><br>
+
+  <a href="http://www.cs.nyu.edu/~smyau">Simon Yau</a>, <br>
+  <!-- easter egg -->
+  Jan <span onclick="document.getElementById('easteregg').style.display='inline';">2012</span>
+</div>
+
+<div id='record'></div>
+
+</div> <!-- container div -->
+
+</body>
+
+<!-- init block -->
+<script>
+    CChecker.init();
+    init();
+</script>
+
+</html>
